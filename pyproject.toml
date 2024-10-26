@@ -31,7 +31,6 @@ dependencies = [
     "webdriver-manager>=4.0.2",
     "zenml>=0.68.0",
 ]
-license = "MIT"
 
 [project.urls]
 Homepage = "https://github.com/amitmeel/llm_twin"
