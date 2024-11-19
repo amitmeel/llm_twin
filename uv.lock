@@ -1007,6 +1007,23 @@ wheels = [
 ]
 
 [[package]]
+name = "groq"
+version = "0.11.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "distro" },
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "sniffio" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/bb/4d/14b9a0c27695b2aa3bcd7f397a9c6d5aa84165d0bed4e4ca3f08fe59a546/groq-0.11.0.tar.gz", hash = "sha256:dbb9aefedf388ddd4801ec7bf3eba7f5edb67948fec0cd2829d97244059f42a7", size = 104986 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/94/c3/8bf3cd2987e262f9fd45024313dae1d009edaa7a5b429566edfdaedaa024/groq-0.11.0-py3-none-any.whl", hash = "sha256:e328531c979542e563668c62260aec13b43a6ee0ca9e2fb22dff1d26f8c8ce54", size = 106518 },
+]
+
+[[package]]
 name = "grpcio"
 version = "1.67.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1732,7 +1749,7 @@ wheels = [
 [[package]]
 name = "llm-twin"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "beautifulsoup4" },
     { name = "chromedriver-autoinstaller" },
@@ -1740,6 +1757,7 @@ dependencies = [
     { name = "datasets" },
     { name = "fake-useragent" },
     { name = "fastapi" },
+    { name = "groq" },
     { name = "html2text" },
     { name = "jinja2" },
     { name = "jmespath" },
@@ -1751,6 +1769,7 @@ dependencies = [
     { name = "opik" },
     { name = "poethepoet" },
     { name = "pymongo" },
+    { name = "python-dotenv" },
     { name = "qdrant-client" },
     { name = "rich" },
     { name = "selenium" },
@@ -1761,7 +1780,7 @@ dependencies = [
     { name = "zenml" },
 ]
 
-[package.dependency-groups]
+[package.dev-dependencies]
 aws = [
     { name = "aws-profile-manager" },
     { name = "kubernetes" },
@@ -1770,6 +1789,7 @@ aws = [
     { name = "sagemaker-huggingface-inference-toolkit" },
 ]
 dev = [
+    { name = "poethepoet" },
     { name = "pre-commit" },
     { name = "pytest" },
     { name = "ruff" },
@@ -1783,6 +1803,7 @@ requires-dist = [
     { name = "datasets", specifier = ">=3.0.2" },
     { name = "fake-useragent", specifier = ">=1.5.1" },
     { name = "fastapi", specifier = ">=0.115.3" },
+    { name = "groq", specifier = ">=0.11.0" },
     { name = "html2text", specifier = ">=2024.2.26" },
     { name = "jinja2", specifier = ">=3.1.4" },
     { name = "jmespath", specifier = ">=1.0.1" },
@@ -1794,6 +1815,7 @@ requires-dist = [
     { name = "opik", specifier = ">=1.0.1" },
     { name = "poethepoet", specifier = ">=0.29.0" },
     { name = "pymongo", specifier = ">=4.10.1" },
+    { name = "python-dotenv", specifier = ">=1.0.1" },
     { name = "qdrant-client", specifier = ">=1.12.0" },
     { name = "rich", specifier = ">=13.9.3" },
     { name = "selenium", specifier = ">=4.25.0" },
@@ -1804,7 +1826,7 @@ requires-dist = [
     { name = "zenml", specifier = ">=0.68.0" },
 ]
 
-[package.metadata.dependency-groups]
+[package.metadata.requires-dev]
 aws = [
     { name = "aws-profile-manager", specifier = ">=0.7.3" },
     { name = "kubernetes", specifier = ">=31.0.0" },
@@ -1813,6 +1835,7 @@ aws = [
     { name = "sagemaker-huggingface-inference-toolkit", specifier = ">=2.4.1" },
 ]
 dev = [
+    { name = "poethepoet", specifier = ">=0.29.0" },
     { name = "pre-commit", specifier = ">=4.0.1" },
     { name = "pytest", specifier = ">=8.3.3" },
     { name = "ruff", specifier = ">=0.7.1" },
