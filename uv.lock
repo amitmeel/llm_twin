@@ -1814,7 +1814,7 @@ requires-dist = [
     { name = "numpy", specifier = ">=1.26.4" },
     { name = "opik", specifier = ">=1.0.1" },
     { name = "poethepoet", specifier = ">=0.29.0" },
-    { name = "pymongo", specifier = ">=4.10.1" },
+    { name = "pymongo", extras = ["srv"], specifier = ">=4.10.1" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
     { name = "qdrant-client", specifier = ">=1.12.0" },
     { name = "rich", specifier = ">=13.9.3" },
