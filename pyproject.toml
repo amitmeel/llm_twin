@@ -30,8 +30,8 @@ dependencies = [
     "tiktoken>=0.8.0",
     "uvicorn>=0.32.0",
     "webdriver-manager>=4.0.2",
-    "zenml>=0.68.0",
     "python-dotenv>=1.0.1",
+    "zenml>=0.73.0",
 ]
 
 [project.urls]
