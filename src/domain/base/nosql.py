@@ -178,7 +178,7 @@ class NoSQLBaseDocument(BaseModel, Generic[T], ABC):
             raise
 
     @classmethod
-    def bulk_insert(cls: Tyep[T], documents: list[T], **kwargs) -> bool:
+    def bulk_insert(cls: Type[T], documents: list[T], **kwargs) -> bool:
         """Inserts multiple documents in a single operation.
 
         Args:
