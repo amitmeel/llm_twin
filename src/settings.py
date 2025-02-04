@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     to be loaded automatically from an `.env` file. It supports retrieving and exporting 
     settings from the ZenML secret store.
     """
-    
+
     model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8', extra='ignore')
 
     # Required settings when working locally or remote
@@ -21,7 +21,7 @@ class Settings(BaseSettings):
 
     # MongoDB 
     MONGODB_DATABASE_HOST: str = "mongodb_uri"
-    MONGODB_DATABSE_USERNAME: str = "mongodb_username"
+    MONGODB_DATABASE_USERNAME: str = "mongodb_username"
     MONGODB_DATABASE_PASSWORD: str = "mongodb_password"
 
     @classmethod
