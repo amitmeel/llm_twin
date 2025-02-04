@@ -23,6 +23,7 @@ class Settings(BaseSettings):
     MONGODB_DATABASE_HOST: str = "mongodb_uri"
     MONGODB_DATABASE_USERNAME: str = "mongodb_username"
     MONGODB_DATABASE_PASSWORD: str = "mongodb_password"
+    MONGODB_DATABASE_NAME: str = "llm-twin"
 
     @classmethod
     def load_settings(cls) -> "Settings":
