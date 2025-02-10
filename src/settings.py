@@ -25,6 +25,10 @@ class Settings(BaseSettings):
     MONGODB_DATABASE_PASSWORD: str = "mongodb_password"
     MONGODB_DATABASE_NAME: str = "llm-twin"
 
+    # LinkedIn Credentials
+    LINKEDIN_USERNAME: str | None = None
+    LINKEDIN_PASSWORD: str | None = None
+
     @classmethod
     def load_settings(cls) -> "Settings":
         """
