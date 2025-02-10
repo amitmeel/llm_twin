@@ -198,6 +198,56 @@ class NoSQLBaseDocument(BaseModel, Generic[T], ABC):
 
             return False
     
+    @classmethod
+    def find(cls: Type[T], **filter_options) -> T | None:
+        """Finds a single document in the collection that matches the given filter options.
+
+        Args:
+            **filter_options: Keyword arguments representing the filter criteria 
+                for querying the database.
+
+        Returns:
+            T | None: An instance of the class if a matching document is found, 
+            otherwise None.
+
+        Raises:
+            errors.OperationFailure: If the database operation fails.
+        """
+        collection = _database[cls.get_collection_name()]
+        try:
+            instance = collection.find_one(filter_options)
+            if instance:
+                return cls.from_mongo(instance)
+
+            return None
+        except errors.OperationFailure:
+            logger.error("Failed to retrieve document")
+
+            return None
+
+    @classmethod
+    def bulk_find(cls: Type[T], **filter_options) -> list[T]:
+        """Finds multiple documents in the collection that match the given filter options.
+
+        Args:
+            **filter_options: Keyword arguments representing the filter criteria 
+                for querying the database.
+
+        Returns:
+            list[T]: A list of class instances corresponding to the retrieved documents. 
+            Returns an empty list if no documents match the criteria or if the operation fails.
+
+        Raises:
+            errors.OperationFailure: If the database operation fails.
+        """
+        collection = _database[cls.get_collection_name()]
+        try:
+            instances = collection.find(filter_options)
+            return [document for instance in instances if (document := cls.from_mongo(instance)) is not None]
+        except errors.OperationFailure:
+            logger.error("Failed to retrieve documents")
+
+            return []
 
     def get_collection_name(cls: Type[T]) -> str:
         """Gets MongoDB collection name from Settings class.
