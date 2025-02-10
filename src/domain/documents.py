@@ -56,7 +56,7 @@ class Document(NoSQLBaseDocument, ABC):
     author_id: UUID4 = Field(alias="author_id")
     author_full_name: str = Field(alias="author_full_name")
 
-class Repositorylink(Document):
+class RepositoryDocument(Document):
     """Represents a repository link document in the NoSQL database.
 
     This class extends the `Document` class and adds specific fields for repositories.
