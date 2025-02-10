@@ -1,0 +1,15 @@
+parameters:
+  user_full_name: Amit Meel # [First Name(s)] [Last Name]
+  links:
+    # Hashnode links
+    - https://viscabar.hashnode.dev/what-is-machine-learning
+    - https://viscabar.hashnode.dev/supervised-machine-learning-a-beginners-guide
+    - https://viscabar.hashnode.dev/object-instantiation-process-in-python
+    - https://viscabar.hashnode.dev/python-modules
+
+    # Github links
+    - https://github.com/amitmeel/llm_agents_tutorials
+    - https://github.com/amitmeel/Tensorflow_Learning
+    - https://github.com/amitmeel/custom_ml_examples
+    - https://github.com/amitmeel/python-deepdive
+    - https://github.com/amitmeel/Natural-Language-Processing-in-Python
