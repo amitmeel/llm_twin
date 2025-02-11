@@ -9,7 +9,7 @@ parameters:
 
     # Github links
     - https://github.com/amitmeel/llm_agents_tutorials
-    - https://github.com/amitmeel/Tensorflow_Learning
+    # - https://github.com/amitmeel/Tensorflow_Learning
     - https://github.com/amitmeel/custom_ml_examples
     - https://github.com/amitmeel/python-deepdive
     - https://github.com/amitmeel/Natural-Language-Processing-in-Python

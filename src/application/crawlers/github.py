@@ -44,10 +44,11 @@ class GithubCrawler(BaseCrawler):
         repo_name = link.rstrip("/").split("/")[-1]
 
         local_temp = tempfile.mkdtemp()
+        original_cwd = os.getcwd()  # Store the current working directory
 
         try:
             os.chdir(local_temp)
-            subprocess.run["git", "clone", link]
+            subprocess.run(["git", "clone", link], check=True)
 
             repo_path = os.path.join(local_temp, repo_name) # noqa: PTH118
 
@@ -76,6 +77,7 @@ class GithubCrawler(BaseCrawler):
         except Exception:
             raise
         finally:
+            os.chdir(original_cwd)  # Change back to original directory
             shutil.rmtree(local_temp)
 
         logger.info(f"Finished scrapping GitHub repository: {link}")
