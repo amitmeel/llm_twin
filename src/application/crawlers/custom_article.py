@@ -15,7 +15,7 @@ class CustomArticleCrawler(BaseCrawler):
     Attributes:
         model (ArticleDocument): The document model used for storing articles.
     """
-    model: ArticleDocument
+    model = ArticleDocument
 
     def __init__(self) -> None:
         """Initializes the CustomArticleCrawler instance."""
