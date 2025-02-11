@@ -248,7 +248,8 @@ class NoSQLBaseDocument(BaseModel, Generic[T], ABC):
             logger.error("Failed to retrieve documents")
 
             return []
-
+    
+    @classmethod
     def get_collection_name(cls: Type[T]) -> str:
         """Gets MongoDB collection name from Settings class.
 
