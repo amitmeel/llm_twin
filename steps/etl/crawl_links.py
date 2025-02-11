@@ -27,7 +27,7 @@ def crawl_links(user: UserDocument, links: list[str]) -> Annotated[list[str], "c
         list[str]: The input list of links after crawling.
     """
     # Initialize the dispatcher and register supported crawlers
-    dispatcher = CrawlerDispatcher.build.register_linkedin().register_medium().register_github()
+    dispatcher = CrawlerDispatcher.build().register_linkedin().register_medium().register_github()
 
     logger.info(f"Start to crawl {len(links)} links(s)")
 
@@ -70,7 +70,7 @@ def _crawl_link(dispatcher: CrawlerDispatcher, link: str, user: UserDocument) ->
 
         return (True, craler_domain)
     except Exception as e:
-        logger.error(f"An error occured while crawling {e!s}")
+        logger.error(f"An error occured while crawling: {e!s}")
 
         return (False, craler_domain)
     
